@@ -1,0 +1,60 @@
+<!doctype html>
+<html class="" lang="">
+<head>
+    <meta charset="utf-8">
+    <title>Chart project</title>
+    <link rel="stylesheet" href="css/main.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="js/main.js"></script>
+</head>
+<body>
+<!--[if lt IE 8]>
+<p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+<![endif]-->
+<h1 class="header1"> Chart project </h1>
+
+<div class="form-main">
+  <form action="">
+    <table>
+      <tr>
+        <td>First name: </td>
+        <td><input type="text" id="inputFirstName"></td>
+      </tr>
+      <tr>
+        <td>Last name: </td>
+        <td><input type="text" id="inputLastName"></td>
+      </tr>
+      <tr>
+        <td>Date of birth: </td>
+        <td><input type="text" id="inputDOB"></td>
+      </tr>
+      <tr>
+        <td>Gender: </td>
+        <td>
+          <input type="radio" name="gender" value="male"> Male<br>
+          <input type="radio" name="gender" value="female"> Female
+        </td>
+      </tr>
+      <tr>
+        <td colspan="2" class="btn-form-ok">
+          <button type="button" name="btn-form-confirm" id="btnFormConfirm"> Confirm </button>
+          <button type="reset" name="btn-form-reset" id="btnFormReset"> Reset </button>
+        </td>
+      </tr>
+    </table>
+  </form>
+</div>
+
+<div class="div-table-results" id="divTableResults">
+  <table class="table-results">
+    <tr>
+      <td> First name </td>
+      <td> Last name </td>
+      <td> Date of birth </td>
+      <td></td>
+    </tr>
+  </table>
+</div>
+
+</body>
+</html>
