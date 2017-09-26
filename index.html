@@ -3,9 +3,13 @@
 <head>
     <meta charset="utf-8">
     <title>Chart project</title>
-    <link rel="stylesheet" href="css/main.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="css/main.css">
     <script src="js/main.js"></script>
+
 </head>
 <body>
 <!--[if lt IE 8]>
@@ -17,22 +21,38 @@
   <form action="">
     <table>
       <tr>
-        <td>First name: </td>
+        <th>First name: </th>
         <td><input type="text" id="inputFirstName"></td>
-      </tr>
-      <tr>
-        <td>Last name: </td>
-        <td><input type="text" id="inputLastName"></td>
-      </tr>
-      <tr>
-        <td>Date of birth: </td>
-        <td><input type="text" id="inputDOB"></td>
-      </tr>
-      <tr>
-        <td>Gender: </td>
         <td>
-          <input type="radio" name="gender" value="male"> Male<br>
-          <input type="radio" name="gender" value="female"> Female
+          <span class="warning-msg" id="warningMsgFirstName"></span>
+        </td>
+      </tr>
+      <tr>
+        <th>Last name: </th>
+        <td><input type="text" id="inputLastName"></td>
+        <td>
+          <span class="warning-msg" id="warningMsgLastName"></span>
+        </td>
+      </tr>
+      <tr>
+        <th>Date of birth: </th>
+        <td><input type="text" id="inputDOB"></td>
+        <td>
+          <span class="warning-msg" id="warningMsgDOB"></span>
+        </td>
+      </tr>
+      <tr>
+        <th>Gender: </th>
+        <td>
+          <label class="radio-select">
+            <input type="radio" name="gender" value="male"> Male<br>
+          </label>
+          <label class="radio-select">
+            <input type="radio" name="gender" value="female"> Female<br>
+          </label>
+        </td>
+        <td>
+          <span class="warning-msg" id="warningMsgGender"></span>
         </td>
       </tr>
       <tr>
@@ -45,13 +65,29 @@
   </form>
 </div>
 
-<div class="div-table-results" id="divTableResults">
-  <table class="table-results">
-    <tr>
-      <td> First name </td>
-      <td> Last name </td>
-      <td> Date of birth </td>
-      <td></td>
+<div class="div-table-results hide" id="divTableResults">
+  <div class="options" id="options">
+
+    <div class="age-display">
+      <label class="radio-select">
+        <input id="ageCheck" type="checkbox">Age<br>
+      </label>
+    </div>
+
+    <div class="gender-display">
+      <label class="radio-select"><input type="radio" name="resultGender" value="male">Display males<br></label>
+      <label class="radio-select"><input type="radio" name="resultGender" value="female">Display females<br></label>
+      <label class="radio-select"><input type="radio" name="resultGender" value="all">Display all<br></label>
+    </div>
+
+  </div>
+
+  <table class="table-results table table-bordered table-hover table-responsive" id="tableResults">
+    <tr class="info">
+      <th class="col-xs-5">First name</th>
+      <th class="col-xs-5">Last name</th>
+      <th class="col-xs-2">Date of birth</th>
+      <th class="col-xs-0"></th>
     </tr>
   </table>
 </div>

@@ -3,19 +3,59 @@ html, body{
   margin: 0;
 }
 
+th,td{
+  word-wrap: break-word;
+}
+
 .header1{
     text-align: center;
 }
 
 .btn-form-ok, .btn-form-reset{
   text-align: center;
+}
 
+.radio-select{
+    display:block;
+    cursor:pointer;
 }
 
 .form-main{
   margin: 0 auto;
 }
 
-.table-results > tr > td {
-  border: 1px solid black;
+.icon{
+  cursor: pointer;
+}
+.icon:hover{
+  color: red;
+}
+
+.div-table-results{
+  max-width: 500px;
+  margin: 0 auto;
+}
+
+.table-results{
+  white-space: nowrap !important;
+}
+
+.hide{
+  display: none;
+}
+
+.age-display{
+  display: inline-block;
+  width: 70px;
+  vertical-align: middle;
+}
+.gender-display{
+  display: inline-block;
+  width: 170px;
+  vertical-align: middle;
+}
+
+.warning-msg{
+  color: red;
+  padding: 7px 3px;
 }
