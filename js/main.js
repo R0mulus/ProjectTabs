@@ -64,7 +64,7 @@ $(document).ready(function(){
     }
     if(sum === 4){
       resultTableContainer.removeClass("hide");
-      resultTable.append("<tr id='person" + sequence + "><td>" + inputFirstName.val() + "</td>" +
+      resultTable.append("<tr id='person" + sequence + "'><td>" + inputFirstName.val() + "</td>" +
         "<td>" + inputLastName.val() + "</td>" +
         "<td>" + $.trim(inputDOB.val()) + "</td>" +
         '<td class="icon"><span class="glyphicon glyphicon-trash remove-button"></span></td>' +
