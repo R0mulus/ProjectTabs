@@ -71,9 +71,16 @@ $(document).ready(function(){
         "</tr>");
     }
 
+/*
+  removing table row
+*/
     $('.remove-button').on('click', function(){
       $(this).parent().parent().remove();
-
+      //count how many children table results have
+      var count = $("#tableResults > tbody > *").length;
+      if(count === 1){
+        resultTableContainer.addClass("hide");
+      }
     });
 
   });
