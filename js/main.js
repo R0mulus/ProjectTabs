@@ -64,11 +64,12 @@ $(document).ready(function(){
     }
     if(sum === 4){
       resultTableContainer.removeClass("hide");
-      resultTable.append("<tr id='person" + sequence + "'><td>" + inputFirstName.val() + "</td>" +
+      resultTable.append("<tr id='person" + sequence + "' data-gender='" + inputGender + "'><td>" + inputFirstName.val() + "</td>" +
         "<td>" + inputLastName.val() + "</td>" +
         "<td>" + $.trim(inputDOB.val()) + "</td>" +
         '<td class="icon"><span class="glyphicon glyphicon-trash remove-button"></span></td>' +
         "</tr>");
+        sequence++;
     }
 
 /*
@@ -81,6 +82,29 @@ $(document).ready(function(){
       if(count === 1){
         resultTableContainer.addClass("hide");
       }
+    });
+/*
+  choosing gender display
+*/
+
+    $('input[name="resultGender"]:radio').on('change', function() {
+        radioGender = $('input[name=resultGender]:checked').val();
+
+        if(radioGender === 'male'){
+          resultTable.find().attr("data-gender").val('female').hide();
+          $( "li" ).each(function() {
+            $( this ).toggleClass( "example" );
+          });
+
+          console.log("selected males");
+
+        }else if(radioGender === 'female'){
+          console.log("selected females");
+
+        }else{
+          console.log("selected all");
+
+        }
     });
 
   });

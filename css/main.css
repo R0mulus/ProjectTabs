@@ -22,6 +22,7 @@ th,td{
 
 .form-main{
   margin: 0 auto;
+  max-width: 330px;
 }
 
 .icon{
