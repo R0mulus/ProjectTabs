@@ -16,7 +16,9 @@ $(document).ready(function(){
   var warningGender = $('#warningMsgGender');
   var correctInput = [0,0,0,0];
 
-
+/*
+  Adding row to result table
+*/
   btnFormConfirm.on('click', function(){
 
 
@@ -24,6 +26,7 @@ $(document).ready(function(){
     var lastNameLength = $.trim(inputLastName.val());
     var dobLenght = $.trim(inputDOB.val());
 
+    //controling length of input fields
     if(firstNameLength.length === 0){
       warningFirstName.text('Enter first name!');
       correctInput[0] = 0;
@@ -58,6 +61,7 @@ $(document).ready(function(){
       correctInput[3] = 1;
     }
 
+    //Adding row to table and showing table
     var sum = 0;
     for(var i = 0; i < correctInput.length; i++){
       sum += correctInput[i];
@@ -83,27 +87,24 @@ $(document).ready(function(){
         resultTableContainer.addClass("hide");
       }
     });
+
 /*
   choosing gender display
 */
-
     $('input[name="resultGender"]:radio').on('change', function() {
-        radioGender = $('input[name=resultGender]:checked').val();
+        var radioGender = $('input[name=resultGender]:checked').val();
+        var findFemales = $('tr[data-gender="female"]');
+        var findMales = $('tr[data-gender="male"]');
 
         if(radioGender === 'male'){
-          resultTable.find().attr("data-gender").val('female').hide();
-          $( "li" ).each(function() {
-            $( this ).toggleClass( "example" );
-          });
-
-          console.log("selected males");
-
+          findFemales.hide();
+          findMales.show();
         }else if(radioGender === 'female'){
-          console.log("selected females");
-
+          findFemales.show();
+          findMales.hide();
         }else{
-          console.log("selected all");
-
+          findFemales.show();
+          findMales.show();
         }
     });
 
